@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displaying Data with Props - React Foundations - Learn NextJS</title>
+</head>
+<body>
+
+    <!-- This is where our React app will be mounted -->
+    <main id="app"></main>
+
+    <!-- Load React and ReactDOM from a CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Load Babel for JSX transformation in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Our React code -->
+    <script type="text/jsx">
+
+        // Select the app div
+        const app = document.getElementById('app');
+
+        // Define a Homepage component
+        function Homepage() {
+
+            const names = ['Alice', 'Bob', 'Charlie'];
+
+            // Use the Header component inside the Homepage component
+            return (
+                <div>
+                    <Header title="Header" />
+                    <Header2 title="Header 2" />
+                    <Header2 />
+                    <Header3 />
+                    <Header4 />
+                    <Header5 />
+                    <Header6 />
+                    <Header7 title={defaultText('Title')} />
+                    <Header8 title={defaultText('Title')} />
+                    <HtmlTag tag="p" attributes={{ className: 'paragraph' }} content="This is a paragraph." />
+                    <ListUl items={['Item', 'Item', 'Item']} />
+                    <ListUl items={names} />
+                    <ul>
+                        {names.map(
+                            (name) => (
+                                <li>{name}</li>
+                            )
+                        )}
+                    </ul>
+                </div>
+            );
+
+        };
+
+        // Define a Header component
+        function Header(props) {
+            return <h1>{props.title}</h1>;
+        };
+
+        // Variant of Header component
+        function Header2({
+            title = 'Displaying Data with Props'
+        }) {
+            return <h1>{title}</h1>;
+        };
+
+        // Variant of Header component
+        function Header3({ title }) {
+            return <h1>{title ? title : 'Default Title'}</h1>;
+        };
+
+        // Variant of Header component
+        function Header4({ title }) {
+            return <h1>{title ? title : 'Default Title'}</h1>;
+        };
+
+        // Variant of Header component
+        function Header5({ title }) {
+            return <h1>{title ?? 'Default Title 2'}</h1>;
+        };
+
+        // Variant of Header component
+        function Header6({ title }) {
+            return <h1>{title ?? 'Default Title 2'}</h1>;
+        };
+
+        // Variant of Header component
+        function Header7({ title }) {
+            return <h1>{defaultText(title)}</h1>;
+        };
+
+        // Variant of Header component
+        function Header8({ title }) {
+            return <h1>{`Nice ${title}`}</h1>;
+        };
+
+        // Generic HTML Tag component
+        function HtmlTag({
+            tag = 'div',
+            attributes = {},
+            content = '',
+        }) {
+            return React.createElement(tag, attributes, content);
+        }
+
+        // ListUl component to render a list
+        function ListUl({ items = [] }) {
+            return (
+                <ul>
+                    {items.map(
+                        (item, index) => (
+                            <li>{`${item} ${index + 1}`}</li>
+                        )
+                    )}
+                </ul>
+            );
+        };
+
+
+        // Helper function to set text
+        function defaultText(text) {
+            if (text) {
+                return text;
+            } else {
+                return 'Default text';
+            }
+        }
+
+        // Create a root and render a simple React element
+        const root = ReactDOM.createRoot(app);
+
+        // Render a heading element
+        root.render(<Homepage />);
+
+    </script>
+
+</body>
+</html>

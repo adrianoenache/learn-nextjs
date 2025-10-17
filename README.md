@@ -8,3 +8,5 @@ Repository for learning NextJS, tests related with it.
   - [Updating UI with Javascript](https://nextjs.org/learn/react-foundations/updating-ui-with-javascript)
   - [Getting Started with React](https://nextjs.org/learn/react-foundations/getting-started-with-react)
   - [Building UI with Components](https://nextjs.org/learn/react-foundations/building-ui-with-components)
+  - [Displaying Data with Props](https://nextjs.org/learn/react-foundations/displaying-data-with-props)
+  - [Adding Interactivity with State](https://nextjs.org/learn/react-foundations/updating-state)
