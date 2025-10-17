@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updating UI with Javascript - React Foundations - Learn NextJS</title>
+</head>
+<body>
+
+    <!-- This div will be the root of our application -->
+    <div id="app"></div>
+
+    <!-- JavaScript to update the UI -->
+    <script type="text/javascript">
+
+        // Select the app div
+        const app = document.getElementById('app');
+
+        // Create a header element
+        const header = document.createElement('h1');
+
+        // Create a text node and append it to the header
+        const text = "Updating UI with Javascript";
+        const headerContent = document.createTextNode(text);
+        header.appendChild(headerContent);
+
+        // Append the header to the app div
+        app.appendChild(header);
+
+    </script>
+
+</body>
+</html>

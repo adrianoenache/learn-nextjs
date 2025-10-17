@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with React - React Foundations - Learn NextJS</title>
+</head>
+<body>
+
+    <!-- This is where our React app will be mounted -->
+    <div id="app"></div>
+
+    <!-- Load React and ReactDOM from a CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Load Babel for JSX transformation in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Our React code -->
+    <script type="text/jsx">
+
+        // Select the app div
+        const app = document.getElementById('app');
+
+        // Create a root and render a simple React element
+        const root = ReactDOM.createRoot(app);
+
+        // Render a heading element
+        root.render(<h1>Getting Started with React</h1>);
+
+    </script>
+
+</body>
+</html>

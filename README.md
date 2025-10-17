@@ -1,2 +1,10 @@
 # learn-nextjs
 Repository for learning NextJS, tests related with it.
+
+- [Start building with Next.js](https://nextjs.org/learn)
+- [React Foundations](https://nextjs.org/learn/react-foundations)
+  - [About React and Next.js](https://nextjs.org/learn/react-foundations/what-is-react-and-nextjs)
+  - [Rendering User Interfaces (UI)](https://nextjs.org/learn/react-foundations/rendering-ui)
+  - [Updating UI with Javascript](https://nextjs.org/learn/react-foundations/updating-ui-with-javascript)
+  - [Getting Started with React](https://nextjs.org/learn/react-foundations/getting-started-with-react)
+  - [Building UI with Components](https://nextjs.org/learn/react-foundations/building-ui-with-components)
