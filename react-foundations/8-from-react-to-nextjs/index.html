@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Interactivity with State - React Foundations - Learn NextJS</title>
+</head>
+<body>
+
+    <!-- The root div where our React app will be mounted -->
+    <div id="app"></div>
+
+    <!-- Load React, ReactDOM, and Babel from CDNs -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Our React code using JSX -->
+    <script type="text/jsx">
+
+        // Get the root div
+        const app = document.getElementById("app");
+
+        // Header component with a title prop
+        function Header({ title }) {
+            return <h1>{title ? title : "Default title"}</h1>
+        };
+
+        // HomePage component with state management
+        function HomePage() {
+
+            // List of names to display
+            const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"]
+
+            //
+            const [likes, setLikes] = React.useState(0)
+
+            // Function to add or remove likes
+            function addRemoveLike(likeAction = 'add') {
+                if (likeAction === 'add') setLikes(likes + 1);
+                if (likeAction === 'remove') {
+                    if (likes > 0) setLikes(likes - 1);
+                };
+            };
+
+            // Render the component
+            return (
+
+                // Main app container
+                <div>
+
+                    {/* Use the Header component */}
+                    <Header title="Develop. Preview. Ship." />
+
+                    {/* List of names */}
+                    <ul>
+                        {names.map((name) => (
+                            <li key={name}>{name}</li>
+                        ))}
+                    </ul>
+
+                    {/* Like and Unlike buttons */}
+                    <button onClick={addRemoveLike.bind(null, 'remove')}>Unlike</button>
+                    <button onClick={addRemoveLike.bind(null, 'add')}>Like</button>
+
+                    {/* Display the number of likes */}
+                    <p>Likes: {likes}</p>
+
+                </div>
+
+            )
+        };
+
+        // Render the HomePage component into the root div
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+
+    </script>
+
+</body>
+</html>
