@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Interactivity with State - React Foundations - Learn NextJS</title>
+</head>
+<body>
+
+    <!-- This is where our React app will be mounted -->
+    <main id="app"></main>
+
+    <!-- Load React and ReactDOM from a CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Load Babel for JSX transformation in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Our React code -->
+    <script type="text/jsx">
+
+        // Select the app div
+        const app = document.getElementById('app');
+
+        // Define a Homepage component
+        function Homepage() {
+
+            // An array of names to display
+            const names = ['Alice', 'Bob', 'Charlie'];
+
+            // Declare a state variable for likes
+            const [likes, setLikes] = React.useState(0);
+
+            // Function to add or remove likes
+            function addRemoveLike(likeAction = 'add') {
+                if (likeAction === 'add') setLikes(likes + 1);
+                if (likeAction === 'remove') setLikes(likes - 1);
+            };
+
+            // Use the Header component inside the Homepage component
+            return (
+                <div>
+                    <Header title="Header" />
+                    <ul>
+                        {names.map(
+                            (name, index) => (
+                                <li key={index}>{name}</li>
+                            )
+                        )}
+                    </ul>
+                    <button
+                        type="button"
+                        onClick={addRemoveLike.bind(null, 'remove')}
+                    >
+                        Remove like
+                    </button>
+                    <button
+                        type="button"
+                        onClick={addRemoveLike.bind(null, 'add')}
+                    >
+                        Add like
+                    </button>
+                    <p>Likes ({likes})</p>
+                </div>
+            );
+
+        };
+
+        // Define a Header component
+        function Header(props) {
+            return <h1>{props.title}</h1>;
+        };
+
+        // Create a root and render a simple React element
+        const root = ReactDOM.createRoot(app);
+
+        // Render a heading element
+        root.render(<Homepage />);
+
+    </script>
+
+</body>
+</html>
