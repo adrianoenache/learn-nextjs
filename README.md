@@ -14,3 +14,4 @@ Repository for learning NextJS, tests related with it.
   - [From React to Next.js](https://nextjs.org/learn/react-foundations/from-react-to-nextjs)
   - [Installing Next.js](https://nextjs.org/learn/react-foundations/installation)
   - [Server and Client Components](https://nextjs.org/learn/react-foundations/server-and-client-components)
+  - [Next Steps](https://nextjs.org/learn/react-foundations/next-steps)
