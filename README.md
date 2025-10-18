@@ -15,3 +15,4 @@ Repository for learning NextJS, tests related with it.
   - [Installing Next.js](https://nextjs.org/learn/react-foundations/installation)
   - [Server and Client Components](https://nextjs.org/learn/react-foundations/server-and-client-components)
   - [Next Steps](https://nextjs.org/learn/react-foundations/next-steps)
+- [App Router](https://nextjs.org/learn/dashboard-app)
