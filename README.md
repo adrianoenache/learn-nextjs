@@ -17,3 +17,4 @@ Repository for learning NextJS, tests related with it.
   - [Next Steps](https://nextjs.org/learn/react-foundations/next-steps)
 - [App Router](https://nextjs.org/learn/dashboard-app)
   - [Getting Started](https://nextjs.org/learn/dashboard-app/getting-started)
+  - [CSS Styling](https://nextjs.org/learn/dashboard-app/css-styling)
