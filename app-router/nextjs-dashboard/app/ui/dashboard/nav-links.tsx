@@ -1,3 +1,4 @@
+// Import icons
 import {
   UserGroupIcon,
   HomeIcon,
@@ -7,31 +8,58 @@ import {
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: 'Home', href: '/dashboard', icon: HomeIcon },
+  {
+    name: 'Home',
+    href: '/dashboard',
+    icon: HomeIcon
+  },
   {
     name: 'Invoices',
     href: '/dashboard/invoices',
     icon: DocumentDuplicateIcon,
   },
-  { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
+  {
+    name: 'Customers',
+    href: '/dashboard/customers',
+    icon: UserGroupIcon
+  },
 ];
 
+// Navigation links component
 export default function NavLinks() {
+
+  // Return the list of navigation links
   return (
+
+    // Fragment to hold the links
     <>
+
+      {/* Map through the links and create a link for each one */}
       {links.map((link) => {
+
+        // Destructure icon component
         const LinkIcon = link.icon;
+
+        // Return individual link
         return (
+
+          // Link element
           <a
             key={link.name}
             href={link.href}
             className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
           >
+            {/* Icon container */}
             <LinkIcon className="w-6" />
             <p className="hidden md:block">{link.name}</p>
           </a>
+
         );
+
       })}
+
     </>
+
   );
+
 }
