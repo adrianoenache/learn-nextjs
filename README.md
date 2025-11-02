@@ -23,3 +23,5 @@ Repository for learning NextJS, tests related with it.
   - [Navigating Between Pages](https://nextjs.org/learn/dashboard-app/navigating-between-pages)
   - [Setting Up Your Database](https://nextjs.org/learn/dashboard-app/setting-up-your-database)
   - [Fetching Data](https://nextjs.org/learn/dashboard-app/fetching-data)
+
+Lorem ...
