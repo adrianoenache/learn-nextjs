@@ -1,7 +1,5 @@
 /* Import Tailwind CSS directives */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Remove spinner arrows from number input fields */
 input[type='number'] {
